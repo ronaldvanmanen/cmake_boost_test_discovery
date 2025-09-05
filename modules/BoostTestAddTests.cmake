@@ -151,7 +151,7 @@ function(boosttest_discover_tests_impl)
     )
   endif()
   execute_process(
-    COMMAND ${__TEST_EXECUTOR} "${__TEST_EXECUTABLE}" --list_content=HRF
+    COMMAND ${__TEST_EXECUTOR} "${__TEST_EXECUTABLE}" --list_content=HRF --detect_memory_leaks=0
     WORKING_DIRECTORY "${__TEST_WORKING_DIR}"
     TIMEOUT ${__TEST_DISCOVERY_TIMEOUT}
     OUTPUT_VARIABLE output
