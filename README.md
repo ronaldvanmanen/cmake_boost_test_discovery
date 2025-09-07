@@ -1,4 +1,4 @@
 # CMake Boost.Test Discovery
-This repository contains a CMake module which provides a function `boosttest_discover_tests` for automatically creating test-targets for individual tests contained in a test executable which uses [*Boost.Test*](https://www.boost.org/doc/libs/1_70_0/libs/test/doc/html/index.html).
+This repository contains a CMake module which provides a function `boost_test_discover_tests` for automatically creating test-targets for individual tests contained in a test executable which uses [*Boost.Test*](https://www.boost.org/doc/libs/1_70_0/libs/test/doc/html/index.html).
 
 For more information read the documentation contained in the `BoostTestDiscoverTests.cmake` module file and look at and try out the example.

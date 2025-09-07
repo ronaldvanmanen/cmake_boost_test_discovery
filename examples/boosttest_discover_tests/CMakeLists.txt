@@ -1,5 +1,5 @@
 #
-# Example for `boosttest_discover_tests`
+# Example for `boost_test_discover_tests`
 #
 
 cmake_minimum_required(VERSION 3.5..3.21)
@@ -24,7 +24,7 @@ find_package(Boost 1.70 CONFIG COMPONENTS unit_test_framework)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../modules")
 
 
-# Load the script with the `boosttest_discover_tests` function.
+# Load the script with the `boost_test_discover_tests` function.
 include(BoostTestDiscoverTests)
 
 
@@ -38,7 +38,7 @@ set(BOOSTTEST_DISCOVER_TESTS_DISCOVERY_MODE PRE_TEST)
 
 # Discover the tests, in `POST_BUILD` mode, not skipping any tests, not even
 # those which are disabled by default within the executable.
-boosttest_discover_tests(BoostTest_example
+boost_test_discover_tests(BoostTest_example
   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test-dir"
   TEST_PREFIX "=1= "
   TEST_SUFFIX " =1="
@@ -52,7 +52,7 @@ boosttest_discover_tests(BoostTest_example
 # Discover the tests a second time, this time in `PRE_TEST` mode (as set to
 # default by the `BOOSTTEST_DISCOVER_TESTS_DISCOVERY_MODE` variable), and skip
 # those tests which are disabled by default within the executable.
-boosttest_discover_tests(BoostTest_example
+boost_test_discover_tests(BoostTest_example
   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test-dir"
   TEST_PREFIX "=2= "
   TEST_SUFFIX " =2="

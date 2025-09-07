@@ -123,8 +123,8 @@ macro(add_another_test hierarchy_list enabled source_line separator)
 endmacro()
 
 
-# Internal implementation for boosttest_discover_tests.
-function(boosttest_discover_tests_impl)
+# Internal implementation for boost_test_discover_tests.
+function(boost_test_discover_tests_impl)
 
   cmake_parse_arguments(
     "_"
@@ -297,7 +297,7 @@ if(CMAKE_SCRIPT_MODE_FILE)
   remove_outer_quotes(CTEST_FILE)
   remove_outer_quotes(TEST_DISCOVERY_TIMEOUT)
 
-  boosttest_discover_tests_impl(
+  boost_test_discover_tests_impl(
     TEST_TARGET ${TEST_TARGET}
     TEST_EXECUTABLE ${TEST_EXECUTABLE}
     TEST_EXECUTOR ${TEST_EXECUTOR}
