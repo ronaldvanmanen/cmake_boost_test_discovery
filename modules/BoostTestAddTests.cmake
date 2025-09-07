@@ -250,12 +250,8 @@ function(boosttest_discover_tests_impl)
     endif()
 
     # Sanitize name for further processing downstream:
-    #  - escape \
-    string(REPLACE [[\]] [[\\]] name "${name}")
-    #  - escape ;
-    string(REPLACE [[;]] [[\;]] name "${name}")
-    #  - escape $
-    string(REPLACE [[$]] [[\$]] name "${name}")
+    #  - escape \ ; $
+    string(REGEX REPLACE [[([\;$])]] [[\\\1]] name "${name}")
 
     # Extract the source file and line number name of the next test case.
     string(REGEX MATCH "${name}\\|[^\"]+" test_source_line "${dot_output}")
