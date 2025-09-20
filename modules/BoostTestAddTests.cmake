@@ -271,10 +271,7 @@ function(boost_test_discover_tests_impl)
     add_command(set ${__TEST_LIST} ${tests})
   endif()
 
-  # Write CTest script
-  file(WRITE "${__CTEST_FILE}" "${script}")
-
-  # Write CTest script
+  # # Write (remaining) content to the CTest script
   flush_script()
 
 endfunction()
